@@ -6,6 +6,7 @@ import 'dart:convert';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: true,
     title: "Laravel 8",
     home: Home(),
   ));
@@ -42,17 +43,18 @@ class _HomeState extends State<Home> {
           title: Text('Laravel 8'),
         ),
         body: ListView.builder(
-          shrinkWrap: true,
+            shrinkWrap: true,
             itemBuilder: (context, index) {
               return ExpansionTile(
                 title: Text(data[index]['titulo']),
                 children: [
                   ListView.builder(
-                    shrinkWrap: true,
+                      shrinkWrap: true,
                       itemBuilder: (context, i) {
-                        return ListTile(title: Text('hols'));
+                        return ListTile(
+                            title: Text(data[index]['items'][i]['titulo']));
                       },
-                      itemCount: 1)
+                      itemCount: data[index]['items'].length)
                 ],
               );
             },
