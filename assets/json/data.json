@@ -56,7 +56,7 @@
     ]
   },
   {
-    "titulo": "Los basicos",
+    "titulo": "Lo basicos",
     "subtitulo": "",
     "items": [
       {
@@ -68,67 +68,71 @@
         "contenido": ""
       },
       {
-        "titulo": "Proveedores de servicio",
+        "titulo": "Protección CSRF",
         "contenido": ""
       },
       {
-        "titulo": "Fachadas",
+        "titulo": "Controladores",
         "contenido": ""
       },
       {
-        "titulo": "Contratos",
+        "titulo": "Peticiones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Respuestas",
+        "contenido": ""
+      },
+      {
+        "titulo": "Puntos de vista",
+        "contenido": ""
+      },
+      {
+        "titulo": "Generación de URL",
+        "contenido": ""
+      },
+      {
+        "titulo": "Sesión",
+        "contenido": ""
+      },
+      {
+        "titulo": "Validación",
+        "contenido": ""
+      },
+      {
+        "titulo": "Manejo de errores",
+        "contenido": ""
+      },
+      {
+        "titulo": "Inicio sesión",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "Interfaz",
     "subtitulo": "",
     "items": [
+      {
+        "titulo": "Plantillas Blade",
+        "contenido": ""
+      },
       {
         "titulo": "",
         "contenido": ""
       },
       {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
-        "contenido": ""
-      }
-    ]
-  },
-  {
-    "titulo": "",
-    "subtitulo": "",
-    "items": [
-      {
         "titulo": "",
         "contenido": ""
-      },
+      }
+    ]
+  },
+  {
+    "titulo": "",
+    "subtitulo": "",
+    "items": [
       {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
@@ -138,23 +142,7 @@
     "subtitulo": "",
     "items": [
       {
-        "titulo": "",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
@@ -164,23 +152,7 @@
     "subtitulo": "",
     "items": [
       {
-        "titulo": "",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
@@ -190,23 +162,7 @@
     "subtitulo": "",
     "items": [
       {
-        "titulo": "",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
@@ -216,23 +172,7 @@
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Solicitar ciclo de vida",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contenedor de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Proveedores de servicio",
-        "contenido": ""
-      },
-      {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
@@ -242,25 +182,40 @@
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Solicitar ciclo de vida",
+        "titulo": "Enrutamiento",
         "contenido": ""
-      },
+      }
+    ]
+  },
+  {
+    "titulo": "",
+    "subtitulo": "",
+    "items": [
       {
-        "titulo": "Contenedor de servicio",
+        "titulo": "Enrutamiento",
         "contenido": ""
-      },
+      }
+    ]
+  },
+  {
+    "titulo": "",
+    "subtitulo": "",
+    "items": [
       {
-        "titulo": "Proveedores de servicio",
+        "titulo": "Enrutamiento",
         "contenido": ""
-      },
+      }
+    ]
+  },
+  {
+    "titulo": "",
+    "subtitulo": "",
+    "items": [
       {
-        "titulo": "Fachadas",
-        "contenido": ""
-      },
-      {
-        "titulo": "Contratos",
+        "titulo": "Enrutamiento",
         "contenido": ""
       }
     ]
   }
+
 ]
