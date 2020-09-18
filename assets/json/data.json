@@ -118,104 +118,191 @@
         "contenido": ""
       },
       {
-        "titulo": "",
+        "titulo": "Localización",
         "contenido": ""
       },
       {
-        "titulo": "",
+        "titulo": "Compilación de activos",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "Seguridad",
     "subtitulo": "",
     "items": [
       {
         "titulo": "Enrutamiento",
         "contenido": ""
-      }
-    ]
-  },
-  {
-    "titulo": "",
-    "subtitulo": "",
-    "items": [
+      },
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Autorización",
+        "contenido": ""
+      },
+      {
+        "titulo": "verificacion de email",
+        "contenido": ""
+      },
+      {
+        "titulo": "Cifrado",
+        "contenido": ""
+      },
+      {
+        "titulo": "Hashing",
+        "contenido": ""
+      },
+      {
+        "titulo": "Restablecimiento de contraseña",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "Cavar más profundo",
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Consola artesanal",
+        "contenido": ""
+      },
+      {
+        "titulo": "Radiodifusión",
+        "contenido": ""
+      },
+      {
+        "titulo": "Cache",
+        "contenido": ""
+      },
+      {
+        "titulo": "Colecciones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Eventos",
+        "contenido": ""
+      },
+      {
+        "titulo": "Almacenamiento de archivos",
+        "contenido": ""
+      },
+      {
+        "titulo": "Ayudantes",
+        "contenido": ""
+      },
+      {
+        "titulo": "Cliente HTTP",
+        "contenido": ""
+      },
+      {
+        "titulo": "Correo",
+        "contenido": ""
+      },
+      {
+        "titulo": "Notificaciones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Desarrollo de paquetes",
+        "contenido": ""
+      },
+      {
+        "titulo": "Colas",
+        "contenido": ""
+      },
+      {
+        "titulo": "Programación de tareas",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "Base de datos",
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Empezando",
+        "contenido": ""
+      },
+      {
+        "titulo": "Consultor de construcción",
+        "contenido": ""
+      },
+      {
+        "titulo": "Paginación",
+        "contenido": ""
+      },
+      {
+        "titulo": "Migraciones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Siembra",
+        "contenido": ""
+      },
+      {
+        "titulo": "Redis",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "ORM elocuente",
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Empezando",
+        "contenido": ""
+      },
+      {
+        "titulo": "Relaciones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Colecciones",
+        "contenido": ""
+      },
+      {
+        "titulo": "Mutadores",
+        "contenido": ""
+      },
+      {
+        "titulo": "Recursos de API",
+        "contenido": ""
+      },
+      {
+        "titulo": "Publicación por entregas",
         "contenido": ""
       }
     ]
   },
   {
-    "titulo": "",
+    "titulo": "Pruebas",
     "subtitulo": "",
     "items": [
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Empezando",
         "contenido": ""
-      }
-    ]
-  },
-  {
-    "titulo": "",
-    "subtitulo": "",
-    "items": [
+      },
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Pruebas HTTP",
         "contenido": ""
-      }
-    ]
-  },
-  {
-    "titulo": "",
-    "subtitulo": "",
-    "items": [
+      },
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Pruebas de consola",
         "contenido": ""
-      }
-    ]
-  },
-  {
-    "titulo": "",
-    "subtitulo": "",
-    "items": [
+      },
       {
-        "titulo": "Enrutamiento",
+        "titulo": "Pruebas del navegador",
+        "contenido": ""
+      },
+      {
+        "titulo": "Base de datos",
+        "contenido": ""
+      },
+      {
+        "titulo": "Burlón",
         "contenido": ""
       }
     ]
   }
-
 ]
