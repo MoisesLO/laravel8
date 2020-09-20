@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                     showSearch(context: context, delegate: DataSearch()))
           ],
         ),
-        body: ListView.builder(
+        body: data == '' ? Text('No hay Resultados ...') : ListView.builder(
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return Card(
@@ -115,7 +115,7 @@ class Detail extends StatelessWidget {
 }
 
 class DataSearch extends SearchDelegate {
-  List itemsDisplay = data;
+
 
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -144,23 +144,27 @@ class DataSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    print(data.where((note) => note['titulo'].toLowerCase().contains(query)).toList());
-    itemsDisplay = data.where((note) {
-      var noteTitle = note.titulo.toLowerCase();
-      return noteTitle.contains(query);
-    });
-    // print(itemsDisplay.length);
-
-    var children = <Widget>[];
-    for(var i in itemsDisplay){
+    var itemsDisplay;
+    // print(data.where((note) => note['titulo'].toLowerCase().contains(query)).toList());
+    for(var i in data){
       for(var h in i['items']){
         // print(h['titulo']);
-        children.add(ListTile(title: Text(h['titulo'])));
+        itemsDisplay.add(h);
       }
     }
-    return ListView(
-      children: children,
-    );
+    print(itemsDisplay);
+    // itemsDisplay = data.where((note) {
+    //   var noteTitle = note.titulo.toLowerCase();
+    //   return noteTitle.contains(query);
+    // });
+    // print(itemsDisplay.length);
+
+    // var children = <Widget>[];
+
+    // return ListView(
+    //   children: children,
+    // );
+    return Text('Esperando resultados');
 
 
   }
