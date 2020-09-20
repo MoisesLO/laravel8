@@ -115,29 +115,54 @@ class Detail extends StatelessWidget {
 }
 
 class DataSearch extends SearchDelegate {
+  List itemsDisplay = data;
+
   @override
   List<Widget> buildActions(BuildContext context) {
-    // TODO: implement buildActions
-    throw UnimplementedError();
+    return [
+      IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = '';
+          })
+    ];
   }
 
   @override
   Widget buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    throw UnimplementedError();
+    return IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          close(context, null);
+        });
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    throw UnimplementedError();
+    return Text('build Result');
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
-    throw UnimplementedError();
+    print(data.where((note) => note['titulo'].toLowerCase().contains(query)).toList());
+    itemsDisplay = data.where((note) {
+      var noteTitle = note.titulo.toLowerCase();
+      return noteTitle.contains(query);
+    });
+    // print(itemsDisplay.length);
+
+    var children = <Widget>[];
+    for(var i in itemsDisplay){
+      for(var h in i['items']){
+        // print(h['titulo']);
+        children.add(ListTile(title: Text(h['titulo'])));
+      }
+    }
+    return ListView(
+      children: children,
+    );
+
+
   }
 
 }
-
