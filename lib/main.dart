@@ -7,6 +7,11 @@ import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart
 
 var data;
 
+Future loadJson() async {
+  String data = await rootBundle.loadString('assets/json/data.json');
+  return json.decode(data);
+}
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -21,11 +26,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Future loadJson() async {
-    String data = await rootBundle.loadString('assets/json/data.json');
-    return json.decode(data);
-  }
-
   @override
   void initState() {
     loadJson().then((value) {
@@ -49,39 +49,58 @@ class _HomeState extends State<Home> {
                     showSearch(context: context, delegate: DataSearch()))
           ],
         ),
-        body: data == '' ? Text('No hay Resultados ...') : ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return Card(
-                child: ExpansionTile(
-                  // leading: Icon(Icons.arrow_forward_ios),
-                  title: Text(data[index]['titulo']),
-                  children: [
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemBuilder: (context, i) {
-                          return ListTile(
-                            leading: Icon(Icons.arrow_forward_ios),
-                            title: Text(data[index]['items'][i]['titulo']),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Detail(
-                                          supertitle: data[index]['titulo'],
-                                          title: data[index]['items'][i]
-                                              ['titulo'],
-                                          content: data[index]['items'][i]
-                                              ['contenido'])));
-                            },
-                          );
-                        },
-                        itemCount: data[index]['items'].length)
-                  ],
-                ),
-              );
-            },
-            itemCount: data.length));
+        body: FutureBuilder(
+          future: loadJson(),
+          builder: (context, snapshot) {
+            if (snapshot.data == null) {
+              return Text('Cargando ...');
+            } else {
+              return ListView.builder(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: ExpansionTile(
+                        leading: CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Color(0xffFDCF09),
+                          child: CircleAvatar(
+                            radius: 23,
+                            backgroundImage: AssetImage('assets/img/logo.png'),
+                          ),
+                        ),
+                        title: Text(snapshot.data[index]['titulo']),
+                        children: [
+                          ListView.builder(
+                              shrinkWrap: true,
+                              itemBuilder: (context, i) {
+                                return ListTile(
+                                  leading: Icon(Icons.arrow_forward_ios),
+                                  title: Text(snapshot.data[index]['items'][i]
+                                      ['titulo']),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Detail(
+                                                supertitle: snapshot.data[index]
+                                                    ['titulo'],
+                                                title: snapshot.data[index]
+                                                    ['items'][i]['titulo'],
+                                                content: snapshot.data[index]
+                                                        ['items'][i]
+                                                    ['contenido'])));
+                                  },
+                                );
+                              },
+                              itemCount: snapshot.data[index]['items'].length)
+                        ],
+                      ),
+                    );
+                  },
+                  itemCount: snapshot.data.length);
+            }
+          },
+        ));
   }
 }
 
@@ -115,8 +134,6 @@ class Detail extends StatelessWidget {
 }
 
 class DataSearch extends SearchDelegate {
-
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -144,29 +161,36 @@ class DataSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    var itemsDisplay;
-    // print(data.where((note) => note['titulo'].toLowerCase().contains(query)).toList());
-    for(var i in data){
-      for(var h in i['items']){
-        // print(h['titulo']);
-        itemsDisplay.add(h);
+    var temporal = new List();
+    var temp = new List();
+    for (int i = 0; i < data.length; i++) {
+      for (int h = 0; h < data[i]['items'].length; h++) {
+        // temporal.insert(i,data[i]['items'][h]['titulo']);
+        temporal.add(data[i]['items'][h]);
+        // print(data[i]['items'][h]['titulo']);
       }
     }
-    print(itemsDisplay);
-    // itemsDisplay = data.where((note) {
-    //   var noteTitle = note.titulo.toLowerCase();
-    //   return noteTitle.contains(query);
-    // });
-    // print(itemsDisplay.length);
 
-    // var children = <Widget>[];
+    temp = temporal
+        .where((note) => note['titulo'].toLowerCase().contains(query))
+        .toList();
 
-    // return ListView(
-    //   children: children,
-    // );
-    return Text('Esperando resultados');
-
-
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(temp[index]['titulo']),
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Detail(
+                        supertitle: 'Regresar',
+                        title: temp[index]['titulo'],
+                        content: temp[index]['contenido'])));
+          },
+        );
+      },
+      itemCount: temp.length,
+    );
   }
-
 }

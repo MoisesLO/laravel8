@@ -1,6 +1,6 @@
 [
   {
-    "titulo": "1.- Empezando (6)",
+    "titulo": "1.- Empezando con Laravel 8",
     "subtitulo": "",
     "items": [
       {
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "titulo": "2.- Conceptos de Arquitectura (5)",
+    "titulo": "2.- Arquitectura de laravel 8",
     "subtitulo": "",
     "items": [
       {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "titulo": "3.- Lo basicos (12)",
+    "titulo": "3.- Conceptos Basicos",
     "subtitulo": "",
     "items": [
       {
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "titulo": "4.- Interfaz (3)",
+    "titulo": "4.- FrontEnd",
     "subtitulo": "",
     "items": [
       {
@@ -120,7 +120,7 @@
     ]
   },
   {
-    "titulo": "5.- Seguridad (6)",
+    "titulo": "5.- Seguridad",
     "subtitulo": "",
     "items": [
       {
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "titulo": "6.- Cavar más profundo (13)",
+    "titulo": "6.- Avanzado",
     "subtitulo": "",
     "items": [
       {
@@ -208,7 +208,7 @@
     ]
   },
   {
-    "titulo": "7.- Base de datos (6)",
+    "titulo": "7.- Base de datos",
     "subtitulo": "",
     "items": [
       {
@@ -238,7 +238,7 @@
     ]
   },
   {
-    "titulo": "8.- ORM elocuente (6)",
+    "titulo": "8.- Eloquent ORM",
     "subtitulo": "",
     "items": [
       {
@@ -268,7 +268,7 @@
     ]
   },
   {
-    "titulo": "9.- Pruebas (6)",
+    "titulo": "9.- Testing",
     "subtitulo": "",
     "items": [
       {
