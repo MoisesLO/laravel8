@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -41,6 +42,15 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-5852042324891789~4137851755");
+    // myBanner..load()..show();
+    myInterstitial
+      ..load()
+      ..show(
+        anchorType: AnchorType.bottom,
+        anchorOffset: 0.0,
+        horizontalCenterOffset: 0.0,
+      );
     return Scaffold(
         appBar: AppBar(
           title: Text('Laravel 8'),
@@ -217,3 +227,31 @@ class DataSearch extends SearchDelegate {
     );
   }
 }
+
+
+MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+  keywords: <String>['php', 'laravel'],
+  contentUrl: 'https://flutter.io',
+  birthday: DateTime.now(),
+  childDirected: false,
+  designedForFamilies: false,
+  gender: MobileAdGender.male,
+  testDevices: <String>[],
+);
+
+// BannerAd myBanner = BannerAd(
+//   adUnitId: "ca-app-pub-5852042324891789/4041151393",
+//   size: AdSize.smartBanner,
+//   targetingInfo: targetingInfo,
+//   listener: (MobileAdEvent event) {
+//     print("BannerAd event is $event");
+//   },
+// );
+
+InterstitialAd myInterstitial = InterstitialAd(
+  adUnitId: 'ca-app-pub-5852042324891789/7316189605',
+  targetingInfo: targetingInfo,
+  listener: (MobileAdEvent event) {
+    print("InterstitialAd event is $event");
+  },
+);
