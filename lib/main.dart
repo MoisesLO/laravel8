@@ -16,6 +16,8 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Laravel 8",
+    theme: ThemeData(),
+    darkTheme: ThemeData.dark(),
     home: Home(),
   ));
 }
@@ -62,7 +64,7 @@ class _HomeState extends State<Home> {
                       child: ExpansionTile(
                         leading: CircleAvatar(
                           radius: 25,
-                          backgroundColor: Color(0xffFDCF09),
+                          backgroundColor: Color(0xf5495FF),
                           child: CircleAvatar(
                             radius: 23,
                             backgroundImage: AssetImage('assets/img/logo.png'),
@@ -83,7 +85,7 @@ class _HomeState extends State<Home> {
                                         MaterialPageRoute(
                                             builder: (context) => Detail(
                                                 supertitle: snapshot.data[index]
-                                                    ['titulo'],
+                                                ['items'][i]['titulo'],
                                                 title: snapshot.data[index]
                                                     ['items'][i]['titulo'],
                                                 content: snapshot.data[index]
@@ -135,6 +137,17 @@ class Detail extends StatelessWidget {
 
 class DataSearch extends SearchDelegate {
   @override
+  ThemeData appBarTheme(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+    return theme.copyWith(
+      primaryColor: theme.focusColor,
+      primaryIconTheme: theme.primaryIconTheme,
+      primaryColorBrightness: theme.primaryColorBrightness,
+      primaryTextTheme: theme.primaryTextTheme,
+    );
+  }
+
+  @override
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
@@ -172,22 +185,32 @@ class DataSearch extends SearchDelegate {
     }
 
     temp = temporal
-        .where((note) => note['titulo'].toLowerCase().contains(query))
+        .where((note) => note['contenido'].toLowerCase().contains(query))
         .toList();
 
     return ListView.builder(
       itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(temp[index]['titulo']),
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Detail(
-                        supertitle: 'Regresar',
-                        title: temp[index]['titulo'],
-                        content: temp[index]['contenido'])));
-          },
+        return Card(
+          child: ListTile(
+            leading: CircleAvatar(
+              radius: 20,
+              backgroundColor: Color(0xf5495FF),
+              child: CircleAvatar(
+                radius: 17,
+                backgroundImage: AssetImage('assets/img/logo.png'),
+              ),
+            ),
+            title: Text(temp[index]['titulo']),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Detail(
+                          supertitle: temp[index]['titulo'],
+                          title: temp[index]['titulo'],
+                          content: temp[index]['contenido'])));
+            },
+          ),
         );
       },
       itemCount: temp.length,
